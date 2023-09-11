@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		
+		<link rel="stylesheet" href="css/solverStyle.css">
+		
+		<link rel="icon" href="images/little_duck.ico">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+		<title>Wordle Things</title>
+	</head>
+	
+	<body>
+		<header>
+			<span id = "mainHeader">Worlde Solver and Game</span>
+			<a href = "play.html" id = 'play' target = "_self"><span>Play</span></a>
+			<a href = "words.html" id = "wordsPage" target = "_self"><span>Word List</span></a>
+
+		</header>
+		
+
+		<div class = "main">
+		<!-- <button type="button" onclick="quack()" ontouch="quack()">Click here.</button> -->
+		<div id = 'possibleGuesses'>
+			<div id = 'perspectiveWords'>
+
+			</div>
+		</div>
+
+		<div class = 'solver'>
+			<h1>Wordle Solver</h1>
+			<div class = 'words'>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '0-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '0-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '0-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '0-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '0-4'></button>
+				</div>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '1-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '1-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '1-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '1-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '1-4'></button>
+				</div>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '2-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '2-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '2-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '2-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '2-4'></button>
+				</div>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '3-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '3-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '3-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '3-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '3-4'></button>
+				</div>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '4-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '4-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '4-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '4-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '4-4'></button>
+				</div>
+				<div class = "word">
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '5-0'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '5-1'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '5-2'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '5-3'></button>
+					<button disabled class = "letter incorrect" type = "button" onclick = "iclusionToggle(this)" id = '5-4'></button>
+				</div>
+			
+			</div>
+			<button id = "enter" type = "button" onclick = "solver()">Enter</button>
+			<h3 id = 'error'></h3>
+			
+		</div>
+		<div class = 'right'>
+			<div id = 'letters'>
+
+			</div>
+		</div>
+		</div>
+
+		</div>
+		<!-- links to javascript files go here - to allow let page load before triggering js -->
+		<script src="javascript/words.js"></script>
+		<script src="javascript/solver.js"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+		<link rel="icon" href="images/mancala board.ico">
+		
+
+		<title>Mancala</title>
+	</head>
+	
+
+	<body>
+		<header>
+			<div id = "header">
+				<span id = "mancala">Mancala</span>
+			
+			</div>
+			<div id = "powerBar"></div>
+		</header>
+		<div id = "settingsContainer">
+			<div id = "gearHolder">
+				<!-- <img id = "gear" src="images/simple-Gear.svg"/> -->
+				<img id = "gear" src="images/gear-solid.svg"/>
+			</div>
+			<div id = "settings">
+				<span id = "settingsHeader">Settings</span>
+				<button id = "computerToggle" type = "button" onclick="computerToggle(this)" ontouch="computerToggle(this)">Play Versus Computer</button>
+				<button id = "restartButton" type = "button" onclick="newGame(this)" ontouch="newGame(this)">New Game</button>
+				<div id = "speedContainer">
+					<svg class = "speedButtons" id = "slower" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM168 232C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H168z"/></svg>
+					<span id = "speedWindow">1.0</span>
+					<svg class = "speedButtons" id = "faster" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 368C269.3 368 280 357.3 280 344V280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H280V168C280 154.7 269.3 144 256 144C242.7 144 232 154.7 232 168V232H168C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H232V344C232 357.3 242.7 368 256 368z"/></svg>
+				</div>
+				<span id = "speedLabel">Speed</span>
+				<button id = "computerRondo" type = "button" onclick="rondoToggle(this)">Click for the AI to play itself</button>
+			</div>
+		</div>
+		
+		<div id = "board">
+			<div class = "well top" id = "leftWell">
+
+			</div>
+			<div id = "pocketHolder">
+				<div class = "pocket top" id = "pocket1-1">
+					<!-- <div id = "it" class = "nut"></div> -->
+				</div>
+				<div class = "pocket top" id = "pocket1-2">
+					
+						
+				</div>
+
+				<div class = "pocket top" id = "pocket1-3"></div>
+				<div class = "pocket top" id = "pocket1-4"></div>
+				<div class = "pocket top" id = "pocket1-5"></div>
+				<div class = "pocket top" id = "pocket1-6"></div>
+				<div class = "pocket bottom" id = "pocket2-1"></div>
+				<div class = "pocket bottom" id = "pocket2-2"></div>
+				<div class = "pocket bottom" id = "pocket2-3"></div>
+				<div class = "pocket bottom" id = "pocket2-4"></div>
+				<div class = "pocket bottom" id = "pocket2-5"></div>
+				<div class = "pocket bottom" id = "pocket2-6"></div>
+			</div>
+			<div class = "well bottom" id = "rightWell">
+
+			</div>
+		</div>
+		<div id = "hands">
+			<div class = "hand top" id = "playerOne"></div>
+			<div id = "center">
+				<div class = "green" id = "player">Player One First (top row)</div>
+				<!-- <button id = "computerToggle" type = "button" onclick="computerToggle(this)" ontouch="computerToggle(this)">Play Versus Computer</button> -->
+			</div>
+			<div class = "hand bottom" id = "playerTwo"></div>
+		</div>
+
+		<svg id = "theOne" class = "nut" width="118" height="192" viewBox="0 0 118 192" fill="none" xmlns="http://www.w3.org/2000/svg" >
+			<path d="M30.6977 9.90638C47.52 -2.51991 70.48 -2.51991 87.3023 9.90637V9.90637C96.4185 16.6404 102.835 26.4041 105.399 37.4439L116.497 85.2229C118.144 92.3133 118.144 99.6867 116.497 106.777L105.399 154.556C102.835 165.596 96.4185 175.36 87.3023 182.094V182.094C70.48 194.52 47.52 194.52 30.6977 182.094V182.094C21.5815 175.36 15.165 165.596 12.6008 154.556L1.50319 106.777C-0.143683 99.6867 -0.143682 92.3133 1.50319 85.2229L12.6008 37.4439C15.165 26.4041 21.5815 16.6404 30.6977 9.90638V9.90638Z" fill="#C4C4C4"/>
+			<path d="M22.9376 59.9376C15.8051 67.07 10.9478 76.1574 8.97995 86.0504C7.0121 95.9434 8.02208 106.198 11.8821 115.517C15.7422 124.836 22.279 132.801 30.6659 138.405C39.0528 144.009 48.9132 147 59 147L59 96L22.9376 59.9376Z" fill="#4F9D8B"/>
+			<path d="M59 147C69.0868 147 78.9472 144.009 87.3341 138.405C95.721 132.801 102.258 124.836 106.118 115.517C109.978 106.198 110.988 95.9434 109.02 86.0504C107.052 76.1574 102.195 67.07 95.0624 59.9376L59 96L59 147Z" fill="#4F9D8B"/>
+			<path d="M95.0624 59.9375C90.3267 55.2018 84.7045 51.4451 78.5168 48.8821C72.3292 46.3192 65.6974 45 59 45C52.3026 45 45.6707 46.3192 39.4831 48.8821C33.2955 51.4451 27.6733 55.2018 22.9375 59.9376L59 96L95.0624 59.9375Z" fill="#69BBB1"/>
+			<path d="M39.4831 143.118C45.6708 145.681 52.3026 147 59 147C65.6974 147 72.3293 145.681 78.5169 143.118L59 96L39.4831 143.118Z" fill="#69BBB1"/>
+			<path d="M50.5724 81.6998C53.1603 73.5012 64.8397 73.5012 67.4276 81.6998V81.6998C68.2818 84.406 70.4341 86.529 73.157 87.3281V87.3281C81.3145 89.7224 81.3145 101.278 73.157 103.672V103.672C70.4341 104.471 68.2818 106.594 67.4276 109.3V109.3C64.8397 117.499 53.1603 117.499 50.5724 109.3V109.3C49.7182 106.594 47.5659 104.471 44.843 103.672V103.672C36.6855 101.278 36.6855 89.7224 44.843 87.3281V87.3281C47.5659 86.529 49.7182 84.406 50.5724 81.6998V81.6998Z" fill="#DECD37" id = "nutCenter"/>
+		</svg>
+		<script src="javascript/script.js"></script>
+	</body>
+	<footer>
+		
+	</footer>
+
+</html>
+
+
+								<!-- 									Change nuts -->
+<!-- pocket opacity -->
+<!-- speed setting -->
+								<!-- 									site icon -->
+<!-- better header -->
+								<!-- rules page -->
+<!-- better restart button -->
+								<!-- general glow up -->
+								<!-- fix ai -->
+								<!-- ai levels? -->
+								<!-- bean moving animation -->
+								<!-- 									bean color animation -->
+<!-- power bar animation -->
+								<!-- scoreboard -->
+
+								

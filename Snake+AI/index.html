@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<title>Snake</title>
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div id="mainHeaderBorder">
+			<div id="mainHeaderWrapper">Snake</div>
+		</div>
+		<div id="moves">
+			<div id="next">
+				<h2>Next Move:</h2>
+				<div id="nextMovesContainer" class="movesContainer"></div>
+			</div>
+			<div id="last">
+				<h2>Last Moves:</h2>
+				<div id="lastMovesContainer" class="movesContainer"></div>
+			</div>
+		</div>
+		<div id="mainWrapper">
+			<div id="snakeMain">
+				<div id="snakeBoard">
+					<div class="snake" id="head" style="left: 25.4vw; top: 25.4vw"></div>
+					<div
+						class="snake"
+						id="body-1"
+						style="left: 25.4vw; top: 26.6vw"
+					></div>
+					<div
+						class="snake"
+						id="body-2"
+						style="left: 25.4vw; top: 27.8vw"
+					></div>
+
+					<div id="lossMenu">
+						<div id="lossMessage">Game Over</div>
+						<div id="finalLength" class="lossMetric">Final Length:</div>
+						<div id="totalEaten" class="lossMetric">Total Food Eaten:</div>
+						<button onclick="reset()" ontouch="reset()">Play Again</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="settings">
+			<h2>SETTINGS</h2>
+
+			<div id="settingsWrapper">
+				<div id="speedToggle" class="settingContainer">
+					<label class="settingsLabel" for="gameSpeedRange">Game Speed</label>
+					<input
+						id="gameSpeedRange"
+						type="range"
+						min="1"
+						max="50"
+						step="0.5"
+						oninput="gameSpeedDisplay.innerHTML=value"
+						value="10"
+					/>
+					<div id="gameSpeedDisplay">10</div>
+				</div>
+
+				<div id="foodMultiplier" class="settingContainer">
+					<label for="foodMultiplierRange" class="settingsLabel"
+						>Food Number</label
+					>
+					<input
+						id="foodMultiplierRange"
+						type="range"
+						min="1"
+						max="50"
+						step="1"
+						oninput="foodMultiplierDisplay.innerHTML=value"
+						value="1"
+					/>
+					<div id="foodMultiplierDisplay">1</div>
+				</div>
+				<div id="foodValueMultiplier" class="settingContainer">
+					<label for="foodValueRange" class="settingsLabel">Food Value</label>
+					<input
+						id="foodValueRange"
+						type="range"
+						min="1"
+						max="10"
+						oninput="foodDisplay.innerHTML=value"
+						value="1"
+					/>
+					<div id="foodDisplay">1</div>
+				</div>
+				<!-- <div id="AiToggle" class="settingContainer">
+					<label for="AiCheckbox">Enable AI:</label>
+					<input id="AiCheckbox" type="checkbox" />
+				</div> -->
+				<div id="lengthWrapper" class="metrics">
+					<div>Length:</div>
+					<div id="lengthDisplay">3</div>
+				</div>
+				<div id="foodEatenWrapper" class="metrics">
+					<div>Food Eaten:</div>
+					<div id="foodCountDisplay">0</div>
+				</div>
+				<button id="restart" onclick="reset()" ontouch="reset()">Reset</button>
+			</div>
+		</div>
+
+		<svg
+			style="display: none"
+			\
+			id="cloneMe"
+			width="50"
+			height="50"
+			viewBox="0 0 50 50"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<rect
+				x="0.75"
+				y="0.75"
+				width="48.5"
+				height="48.5"
+				stroke="darkblue"
+				stroke-width="0"
+			/>
+			<path d="M40.85 24.85V26.55" stroke="lightgreen" stroke-width="2.5" />
+			<path
+				d="M41 25.2L28 12L23.5 15.9111L28 21.7778H11V29.6H28L23.5 34"
+				stroke="green"
+				stroke-width="2.5"
+			/>
+			<path
+				d="M41 26.2L28 39.7L23.5 35.7L28 29.7H11V21.7H28L23.5 17.2"
+				stroke="#2d2dff"
+				stroke-width="2.5"
+			/>
+		</svg>
+
+		<script src="javascript/script.js"></script>
+	</body>
+	<!--  -->
+</html>

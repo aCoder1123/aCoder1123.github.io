@@ -1,0 +1,425 @@
+body {
+  background-color: whitesmoke;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  flex-basis: 0;
+  flex-shrink: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(53, 53, 167);
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  text-decoration: none;
+  flex-direction: column;
+}
+
+#header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 9vh;
+  width: 100%;
+  flex-basis: 0;
+}
+
+
+#header span {
+  /* color: black; */
+  font-weight: 700;
+  font-size: 65px;
+  background: -webkit-linear-gradient(360deg, rgb(143, 88, 88), rgb(82, 150, 62));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px black;
+  flex-basis: 0;
+}
+
+
+
+
+#gear {
+  position: fixed;
+  right: 1vh;
+  top: 1vh;
+  width: 7vh;
+  opacity: .6;
+  flex-basis: 0;
+  transition: all 400ms ease 60ms;
+  transform: rotate(30deg);
+}
+
+
+#settingsContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0;
+}
+
+#settings {
+  position: fixed;
+  top: 0;
+  right: calc(9vh - 20vw);
+  width: calc(20vw - 9vh);
+  height: 100vh;
+  background: -webkit-linear-gradient(0deg, rgba(30, 30, 30, 0.65), rgba(30, 30, 30, 1));
+  border-radius: 0 0 0 2vh;
+  transition: all 400ms ease 60ms;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  
+}
+
+
+
+#gearHolder {
+  background: -webkit-linear-gradient(0deg, rgba(30, 30, 30, 0.6), rgba(30, 30, 30, .65));
+  min-height: 9vh;
+  min-width: 9vh;
+  max-width: 9vh;
+  border-radius: 2vh 0 0 2vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: all 400ms ease 60ms;
+}
+
+
+
+#settingsContainer:hover {
+  width: 20vw;
+}
+
+#settingsContainer:hover #settings {
+  transform: translateX(-15vw);
+
+}
+
+#settingsContainer:hover #gear {
+  transform: translateX(0vw)
+  rotate(210deg);
+  opacity: 1;
+}
+
+#settingsContainer:hover #gearHolder {
+  transform: translateX(-15vw)
+
+}
+
+#settingsHeader {
+  color: rgb(106, 165, 199);
+  background: transparent;
+  font-size: 34px;
+  letter-spacing: 1.3px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 2vh;
+}
+
+
+#speedContainer {
+  width: 14vh;
+  height: 4vh;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+#speedWindow {
+  background-color: whitesmoke;
+  border: black solid 1px;
+  border-radius: 4px;
+  width: 5.5vh;
+  display: inline-flex;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+}
+
+.speedButtons {
+  height: 3.5vh;
+  fill: rgb(106, 165, 199);
+  opacity: 0.8;
+  transition: all cubic-bezier(0.1,-0.5, 0.62, 1.98) .2s;
+}
+
+.speedButtons:hover {
+  opacity: 1;
+  height: 3.7vh;
+  margin: -.1vh;
+}
+
+#speedLabel {
+  color: rgb(106, 165, 199);
+  background: transparent;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+#computerToggle, #restartButton, #computerRondo {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  background-color: rgb(106, 165, 199);
+  padding: 5px 6px;
+  border-radius: 5px;
+  margin: 3vh;
+  opacity: 0.9;
+  
+}
+
+#computerToggle:hover, #restartButton:hover, #computerRondo {
+  opacity: 1;
+  width: + 1vh;
+}
+
+
+
+
+
+
+
+:root {
+  --position: 50%;
+  transition: all ease 5s 3s;
+}
+
+
+
+
+#powerBar {
+  height: 1vh;
+  width: 100%;
+  border-top: 2px solid black ;
+  transition: all ease 5s 3s;
+  
+  background: -webkit-linear-gradient(0deg, rgb(82, 150, 62) 0 calc(var(--position) - 2.5%), rgb(143, 88, 88) calc(var(--position) + 2.5%) 100%);
+}
+/* 
+@keyframes powerChange {
+  0% {
+    background: -webkit-linear-gradient(0deg, rgb(82, 150, 62) 0 47.5%, rgb(143, 88, 88) 52.5% 100%);
+  }
+  100% {
+    background: -webkit-linear-gradient(0deg, rgb(82, 150, 62) 0 25%, rgb(143, 88, 88) 30% 100%);
+  }
+} */
+
+#board {
+  margin-top: 10.9vh;
+  height: 500px;
+  border: black 3px solid;
+  width: 95vw;
+  border-radius: 8.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(97, 156, 190);
+  /* background-image: url("../images/Ian.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%; */
+  
+  flex-shrink: 0;
+}
+
+#pocketHolder {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 85%;
+
+}
+
+
+.pocket {
+  border: black 3px solid;
+  border-radius: 50%;
+  height: 40%;
+  width: 13%;
+  max-width: 13%;
+  max-height: 40%;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+}
+
+.top, #playerOne {
+  /* background: radial-gradient(rgb(82, 150, 62) 15%, rgba(115, 60, 202, 0.8) 70%);, rgb(252, 251, 208) 95%); */
+  background-color: rgb(82, 150, 62);
+}
+
+.bottom, #playerTwo {
+  /* background: radial-gradient(rgb(148, 65, 65) 15%, rgba(115, 60, 202, 0.8) 70%); */
+  background-color: rgb(148, 65, 65);
+}
+
+
+.well {
+  border: black solid 3px;
+  border-radius: 50%inherit;
+  flex-shrink: 0;
+  width: 12%;
+  height: 90%;
+  margin: 0 3% 0 3%;
+  border-radius: 50%/40%;
+  
+}
+
+#leftWell {
+  margin-right: 1%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 5px;
+}
+
+#rightWell{
+  margin-left: 1%; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 5px;
+}
+
+.nutty {
+  width: 19.09px;
+  height: 36px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 2px;
+
+  
+}
+
+.nut {
+  width: 30px;
+  height: 43px;
+  margin: 1px;
+  opacity: 1;
+}
+
+.nut #nutCenter {
+ 
+  animation: colorChange 5s linear infinite;
+}
+
+#theOne {
+  display: none;
+}
+
+@keyframes colorChange {
+  0% {
+    fill: red;
+  }
+
+  16.5%{
+    fill: orange;
+  }
+
+  33%{
+    fill: yellow;
+  }
+
+  50%{
+    fill: green;
+  }
+
+  66%{
+    fill: blue;
+  }
+
+  82.5%{
+    fill: purple;
+  }
+  100% {
+    fill: red;
+  }
+}
+
+/* 
+#nutCenter {
+  fill: blue;
+}
+ */
+
+
+
+
+
+#hands {
+  margin-top: 1.5vh;
+  height: 22vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hand { 
+  height: 100%;
+  width: 11.9%;
+  border: black 3px solid;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  margin: 0 3%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+}
+
+#player {
+  font-size: 25px;
+}
+
+.red {
+  color: rgb(143, 88, 88);
+}
+
+.green {
+  color: rgb(82, 150, 62);
+}
+
+.yellow {
+  color: rgb(250, 248, 122);
+}
+
+#it {
+  background-color: transparent;
+}
+
+#center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
