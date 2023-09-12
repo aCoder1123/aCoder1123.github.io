@@ -1,0 +1,11 @@
+body {
+    background-color: whitesmoke;
+
+}
+
+header {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
