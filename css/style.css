@@ -1,15 +1,209 @@
 body {
-    background-color: whitesmoke;
+    background-color: rgb(238, 238, 238);
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    
 }
 
 header {
     width: 100%;
-    height: max-content;
+    height: 8vh;
     font-family: 'Bitter', serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: rgb(0, 0, 0);
+    /* border-bottom: .5vh solid black; */
+    /* border-top: 5vh solid rgb(250, 226, 197); */
+    position: sticky;
+    color: whitesmoke;
+    min-height: 50px;
+    transition: 0.3s ease-in all;
+}
+
+
+
+header h1, header h3 {
+
+    padding: 0;
+    margin: 0;
+}
+
+.headerHolder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* padding: 4vh; */
+    width: 33.33333%;
+}
+
+header a {
+    color: whitesmoke;
+    text-decoration: none;
+    
+
+}
+
+header a:hover {
+    color: rgb(235, 235, 235);
+    transition: all 0.8s ease;
+    /* text-decoration: underline; */
+    
+}
+
+#logo {
+    height: 7vh;
+    width: calc(7vh * calc(9 / 8));
+    min-height: 40px;
+    transition: all .2s ease;
+}
+
+#homeLink {
+    height: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+#logo:hover ellipse {
+    fill: rgb(220, 220, 220);
+    transition: all 0.8s ease;
+}
+
+#headerLeft {
+    flex-direction: row-reverse;
+}
+
+#headerRight {
+    height: 100%;
+}
+
+
+#abLink {
+    width: calc(100% - 8vh);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@keyframes openDropdown {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 8vh;
+    }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(0%);
+     display: flex;
+     z-index: 0;
+  }
+
+  to {
+    transform: translateX(100%);
+    display: flex;
+    z-index: 0;
+  }
+}
+
+
+
+
+
+
+#projectDropdown {
+    width: 100%;
+    transition: 0.3s ease-in all;
+    z-index: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#projectDropdown:hover #projectsLabel{
+    background-color: rgb(48, 48, 48);
+}
+
+#projectsLabel  {
+     z-index: 10;
+     height: 100%;
+     width: 100%;
+     min-width: 100%;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: start;
+     justify-content: center;
+     background-color: black;
+     padding-left: 5%;
+}
+
+
+#dropdownHolder {
+    
+
+    
+    position: absolute;
+    top: 0;
+    left: 88.8vw;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border: solid black 0.3vh;
+    border-radius: 0 0 0.4vh 0.4vh;
+    color: black;
+    max-width: max-content;
+
+    background-color: whitesmoke;
+    border-top: none;
+    padding: 0 .2% 0 .2%;
+    display: none;
+
+    /* transition: 2s ease-in all; */
+    animation:  1s ease-in 0s openDropdown reverse;
+    z-index: 1;
+}
+
+#dropdownHolder a {
+    color: black;
+    font-weight: 600;
+    font-size: 1.7vh;
+}
+
+
+
+
+
+#projectDropdown:hover #dropdownHolder {
+    animation:  0.35s ease-out 0s openDropdown forwards;
+    display: flex;
+    /* top: 8vh; */
+    /* height: max-content; */
+    z-index: 1;
+    
+    
+}
+
+
+
+
+#headerRight a, #headerRight div {
+    width: 33.3333%;
+}
+
+#projectDropdown span {
+    width: 100%;
 }
