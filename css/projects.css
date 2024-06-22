@@ -1,0 +1,171 @@
+@keyframes fade {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    background-color: rgb(238, 238, 238);
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    font-family: 'Bitter', serif;
+   
+}
+
+header h1 {
+    margin: 3vh 0 0vh;
+    font-size: 6vh;
+}
+
+header h4 {
+    margin: 0;
+}
+
+#cardWrap {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 3vh 0 2vh;
+
+    --blue-color: hsl(182, 45%, 50%);
+    --pink-color: hsl(322, 45%, 50%);
+    --green-color: hsl(131, 45%, 50%);
+    --red-color: hsl(0, 45%, 50%);
+    --orange-color: hsl(23, 45%, 50%);
+    --grey-color: hsl(0, 0%, 50%);
+}
+
+.blue {
+    background-color: var(--blue-color);
+}
+.pink {
+    background-color: var(--pink-color);
+}
+.green {
+    background-color: var(--green-color);
+}
+.red {
+    background-color: var(--red-color);
+}
+.orange {
+    background-color: var(--orange-color);
+}
+.grey {
+    background-color: var(--grey-color);
+}
+
+
+
+.cardLink {
+    width: 20vw;
+    text-decoration: none;
+}
+
+.projCard {
+    width: 20vw;
+    text-decoration: none !important;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: .4vw solid black;
+    border-radius: 1vw;
+    transition: ease .2s all;
+    margin-top: 5vh;
+}
+
+.projCard:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+
+.cardHead {
+    font-size: 4vh;
+    margin: 2vh;
+}
+
+.projCard:hover .cardHead {
+    text-decoration: underline;
+}
+
+
+.cardImg {
+    /* aspect-ratio: 1; */
+    width: 90%;
+    border: .2vw solid black;
+    border-radius: .4vw;
+}
+
+.cardTagWrap {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 6vh;
+}
+
+.cardTagWrap span, .cardTagWrap img {
+    border: .5vh solid black;
+    height: 3.5vh;
+    aspect-ratio: 1;
+    border-radius: 3.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+    transition: all ease .2s;
+}
+
+.cardTagWrap img {
+    height: 2.75vh;
+    padding: .375vh;
+}
+
+.cardTagWrap span:hover, .cardTagWrap img:hover {
+    /* color: rgb(66, 66, 66); */
+    border-color: rgb(66, 66, 66);
+    fill: rgb(66, 66, 66);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.cardDes {
+    width: 95%;
+    font-size: 2.2vh;
+    margin-bottom: .5vh;
+}
+
+footer {
+    display: none;
+}
